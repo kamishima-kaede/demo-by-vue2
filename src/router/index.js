@@ -1,29 +1,40 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
-Vue.use(VueRouter)
+// pages
+const DemoList = () => import(/* webpackChunkName: "demoList" */ '@/views/DemoList.vue');
+const WaveSurfer = () => import(/* webpackChunkName: "demoList" */ '@/views/WaveSurfer');
+
+Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'DemoList',
+    component: DemoList,
+    meta: {
+      routerName: '列表',
+    },
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+    path: '/wavesurfer',
+    name: 'WaveSurfer',
+    component: WaveSurfer,
+    meta: {
+      routerName: '声波波形图',
+    },
+  },
+];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+// 全局导航守卫
+router.beforeEach((to, from, next) => {
+  next();
+});
+
+export default router;
