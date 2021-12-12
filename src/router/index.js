@@ -3,7 +3,8 @@ import VueRouter from 'vue-router';
 
 // pages
 const DemoList = () => import(/* webpackChunkName: "demoList" */ '@/views/DemoList.vue');
-const WaveSurfer = () => import(/* webpackChunkName: "demoList" */ '@/views/WaveSurfer');
+const WaveSurfer = () => import(/* webpackChunkName: "waveSurfer" */ '@/views/WaveSurfer');
+const DoubleClick2Enter = () => import(/* webpackChunkName: "doubleClick2Enter" */ '@/views/DoubleClick2Enter');
 
 Vue.use(VueRouter);
 
@@ -22,6 +23,14 @@ const routes = [
     component: WaveSurfer,
     meta: {
       routerName: '声波波形图',
+    },
+  },
+  {
+    path: '/doubleClick2Enter',
+    name: 'DoubleClick2Enter',
+    component: DoubleClick2Enter,
+    meta: {
+      routerName: '双击输入',
     },
   },
 ];
