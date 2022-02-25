@@ -5,6 +5,7 @@ import VueRouter from 'vue-router';
 const DemoList = () => import(/* webpackChunkName: "demoList" */ '@/views/DemoList.vue');
 const WaveSurfer = () => import(/* webpackChunkName: "waveSurfer" */ '@/views/WaveSurfer');
 const DoubleClick2Enter = () => import(/* webpackChunkName: "doubleClick2Enter" */ '@/views/DoubleClick2Enter');
+const ImportCss = () => import(/* webpackChunkName: "doubleClick2Enter" */ '@/views/ImportCss');
 
 Vue.use(VueRouter);
 
@@ -31,6 +32,14 @@ const routes = [
     component: DoubleClick2Enter,
     meta: {
       routerName: '双击输入',
+    },
+  },
+  {
+    path: '/importcss',
+    name: 'ImportCss',
+    component: ImportCss,
+    meta: {
+      routerName: 'css导入',
     },
   },
 ];

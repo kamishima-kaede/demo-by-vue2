@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "core-js": "3.19.2",
+    "css": "^3.0.0",
     "element-ui": "2.15.7",
     "lodash": "^4.17.21",
     "normalize.css": "8.0.1",
